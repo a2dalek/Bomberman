@@ -1,5 +1,6 @@
 package bomberman;
 
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -28,8 +29,16 @@ public class BombermanApplication extends Application {
         test.render();
         stage.setTitle("Hello!");
         stage.setScene(scene);
-        stage.show();
         //test.play();
+        scene.setOnKeyPressed(Management::inputKeyPress);
+        scene.setOnKeyReleased(Management::inputKeyRelease);
+        final long startNanoTime = System.nanoTime();
+        new AnimationTimer() {
+            public void handle(long currentNanoTime) {
+                test.play();
+            }
+        }.start();
+        stage.show();
     }
 
     public static void main(String[] args) {

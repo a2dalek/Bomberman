@@ -10,7 +10,7 @@ public class Management {
     public static float x_val_ = 0;
     public static float y_val_ = 0;
     public static boolean on_ground = false;
-    private static final String url = "C:\\Users\\Hien Jeony\\Desktop\\OOP\\Bomberman\\data\\map.txt";
+    private static final String url = "C:\\Users\\bangphuonglaptop\\Desktop\\Bomberman\\data\\map.txt";
     public static void importFromFile() {
         FileInputStream fileInputStream = null;
         BufferedReader bufferedReader = null;
@@ -118,28 +118,34 @@ public class Management {
     }
 
     public static void inputKeyPress(KeyEvent e) {
-        if (e.getCode() == KeyCode.KP_RIGHT) {
+        String s = e.getCode().toString();
+        if (s.contains("RIGHT")) {
+            System.out.println("right");
             Map.player.setRight(1);
             Map.player.setLeft(0);
-        } else if (e.getCode() == KeyCode.KP_LEFT) {
+        } else if (s.contains("LEFT")) {
+            System.out.println("left");
             Map.player.setRight(0);
             Map.player.setLeft(1);
-        } else if (e.getCode() == KeyCode.KP_UP) {
+        } else if (s.contains("UP")) {
+            System.out.println("up");
             Map.player.setDown(0);
             Map.player.setUp(1);
-        } else if (e.getCode() == KeyCode.KP_DOWN) {
+        } else if (s.contains("DOWN")) {
+            System.out.println("down");
             Map.player.setDown(1);
             Map.player.setUp(0);
         }
     }
     public static void inputKeyRelease(KeyEvent e) {
-        if (e.getCode() == KeyCode.KP_RIGHT) {
+        String s = e.getCode().toString();
+        if (s.contains("RIGHT")) {
             Map.player.setRight(0);
-        } else if (e.getCode() == KeyCode.KP_LEFT) {
+        } else if (s.contains("LEFT")) {
             Map.player.setLeft(0);
-        } else if (e.getCode() == KeyCode.KP_UP) {
+        } else if (s.contains("UP")) {
             Map.player.setUp(0);
-        } else if (e.getCode() == KeyCode.KP_DOWN) {
+        } else if (s.contains("DOWN")) {
             Map.player.setDown(0);
         }
     }
@@ -160,8 +166,8 @@ public class Management {
         else if (Map.player.getDown() == 1) {
             y_val_ += PLAYER_SPEED;
         }
-        System.out.println(x_val_);
-        System.out.println("DDDD");
+        //System.out.println(x_val_);
+        //System.out.println("DDDD");
         Management.checkMap();
     }
 

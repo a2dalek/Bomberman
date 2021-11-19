@@ -48,14 +48,11 @@ public class BombController {
         //BombermanApplication.gc.drawImage(Player, 0, 0, Map.weight, Map.height);
     }
 
-    /*public void play() {
-        while (1 > 0) {
-            BombermanApplication.scene.setOnKeyPressed(Management::inputKeyPress);
-            BombermanApplication.scene.setOnKeyReleased(Management::inputKeyRelease);
+    public void play() {
+            //BombermanApplication.scene.setOnKeyPressed(Management::inputKeyPress);
+            //BombermanApplication.scene.setOnKeyReleased(Management::inputKeyRelease);
             Management.doPlayer();
-            System.out.println(Map.player.getX());
+            //System.out.println(Map.player.getX());
             this.render();
-        }
-
-    }*/
+    }
 }
